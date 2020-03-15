@@ -68,8 +68,21 @@ def main():
     
     daily_cases = analyzeData()
     
-    Exporter.getTweets("output_got.csv","crona","2020-02-12","2020-02-15")
+    try:
+        f = open("output_got.csv","r+", encoding="utf8")
+        f.close()
+    except IOError:
+        Exporter.getTweets("output_got.csv","crono virus","2020-02-12","2020-02-15")
+
     print(open("output_got.csv","r+", encoding="utf8").read())
+    print("------------------------------------------------------------------------------------")
+    try:
+        f = open("output_got2.csv","r+", encoding="utf8")
+        f.close()
+    except IOError:
+        Exporter.getTweets("output_got2.csv","crono virus","2020-03-12","2020-03-15")
+
+    print(open("output_got2.csv","r+", encoding="utf8").read())
         
     
     test_data_size = int(0.3*len(daily_cases))

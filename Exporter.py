@@ -8,11 +8,11 @@ else:
 
 def getTweets(name,query,since,until):
 	tweetCriteria = got.manager.TweetCriteria()
-	outputFileName = "output_got.csv"
+	outputFileName = name
 	#tweetCriteria.username = arg
-	tweetCriteria.since = "2020-02-12"
-	tweetCriteria.until = "2020-02-15"
-	tweetCriteria.querySearch = "crono"
+	tweetCriteria.since = since
+	tweetCriteria.until = until
+	tweetCriteria.querySearch = query
 	tweetCriteria.topTweets = True
 	tweetCriteria.maxTweets = 10000
 	#tweetCriteria.near = '"' + arg + '"'
